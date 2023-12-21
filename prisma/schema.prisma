@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model vaga {
+  titulo     String @id @db.VarChar(100)
+  descricao  String @db.VarChar(1000)
+  atividades String @db.VarChar(1000)
+  requisitos String @db.VarChar(1000)
+}
